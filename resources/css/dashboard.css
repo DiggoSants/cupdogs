@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #ffe7ee;
+    font-family: Arial, sans-serif;
+}
+
+.menu-button {
+    cursor: pointer;
+    display: block;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+    transition: transform .2s linear;
+}
+
+.menu {
+    background: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    inset: 0;
+    box-shadow: 0 8px 24px rgb(122 36 76 / 18%);
+}
+
+.hamburguer {
+    position: relative;
+    display: block;
+    background: #000;
+    width: 30px;
+    height: 2px;
+    top: 29px;
+    left: 15px;
+    transition: 0.5s ease-in-out;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    background: #000;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+}
+
+.hamburguer::before {
+    top: -10px;
+}
+
+.hamburguer::after {
+    bottom: -10px;
+}
+
+#check {
+    display: none;
+}
+
+#check:checked~label .hamburguer {
+    background: transparent;
+}
+
+#check:checked~label .hamburguer::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+#check:checked~label .hamburguer::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+#check:checked~.menu-button {
+    transform: translateX(300px);
+}
+
+.barra {
+    background-color: #333;
+    min-height: 100vh;
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    transition: transform .2s linear;
+    z-index: 5;
+}
+
+#check:checked~.barra {
+    transform: translateX(300px);
+}
+
+.itens {
+    margin-top: 100px;
+}
+
+.item {
+    align-items: center;
+    color: white;
+    display: flex;
+    width: 300px;
+    height: 100px;
+    background-color: #9999;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: 700;
+    padding-left: 32px;
+    text-decoration: none;
+    transition: background-color .2s ease;
+}
+
+.item:hover {
+    background-color: #b54a82;
+}
+
+.conteudo {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+}
+
+.logo {
+    max-width: 220px;
+    width: 60vw;
+}
