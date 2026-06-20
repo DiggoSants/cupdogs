@@ -18,9 +18,12 @@
 
     <div class="barra">
         <div class="itens">
-            <p class="item">item 1</p>
-            <p class="item">item 2</p>
-            <p class="item">item 3</p>
+            <a class="item" href="{{ route('dashboard') }}">Inicio</a>
+            <a class="item" href="/produtos">Produtos</a>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button class="item item-button" type="submit">Sair</button>
+            </form>
         </div>
     </div>
 </body>
